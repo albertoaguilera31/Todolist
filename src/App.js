@@ -12,21 +12,43 @@ import React from 'react';
   {text: "llorar con la llorona", complete: false},
   {text: "lalalala", complete: false},
   {text: "Usar estados derivados", complete: true},
-];*/
+];
 
-//localStorage.setItem('TODOS-V1', defaultTodos);
+localStorage.setItem('TODOS-V1', JSON.stringify(defaultTodos));*/
 //localStorage.removeItem('TODOS-V1');
+
+function useLocalStorage(itemName, initialValue){
+ 
+
+  const localStorageItem = localStorage.getItem(itemName);
+
+let parsedItem;
+
+if(!localStorageItem){
+  localStorage.setItem(itemName, JSON.stringify(initialValue));
+  parsedItem= initialValue;
+}else{
+  parsedItem= JSON.parse(localStorageItem);
+}
+
+const [item, setItem ] = React.useState(parsedItem);
+
+const saveItem = (newItem) =>{
+  localStorage.setItem(itemName, JSON.stringify(newItem));
+  setItem(newItem);
+};
+
+return [item, saveItem];
+
+}
 
 function App() {
 
-  const localStorageTodos = localStorage.getItem('TODOS-V1');
-
-let parsedTodos = JSON.parse(localStorageTodos);
-
-  const [todos, setTodos] = React.useState(parsedTodos);
+  const [todos, saveTodos] = useLocalStorage('TODOS-V1', []);
   const [searchValue, setSearchValue] = React.useState('');
 
   const completedTodos= todos.filter(todo => !!todo.complete).length;
+  const totalTodos = todos.length;
 
   const searchedTodos = todos.filter(
     (todo)=>{
@@ -34,6 +56,8 @@ let parsedTodos = JSON.parse(localStorageTodos);
       (searchValue.toLocaleLowerCase());
     }
   );
+
+  
   
   const completeTodo= (text)=> {
     const newTodos= [...todos];
@@ -41,7 +65,7 @@ let parsedTodos = JSON.parse(localStorageTodos);
       (todo)=> todo.text == text
     );
     newTodos[todoIndex].complete = true;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
 
   const deleteTodo= (text)=> {
@@ -50,7 +74,7 @@ let parsedTodos = JSON.parse(localStorageTodos);
       (todo)=> todo.text == text
     );
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
 
   return (
