@@ -6,26 +6,14 @@ import { CreateTodoButton } from '../CreateTodoButton';*/
 import './App.css';
 import React from 'react';
 import { AppUI } from './AppUI';
+import { TodoProvider } from '../TodoContext';
 //import { useLocalStorage } from './useLocalStorage';
 
 //import React from 'react';
 //import useLocalStorage from './useLocalStorage';
-
-/*localStorage.removeItem('TODOS-V1');
-const defaultTodos = [
-  {text: "cortar cebolla", complete: true},
-  {text: "curso de react", complete: false},
-  {text: "llorar con la llorona", complete: false},
-  {text: "lalalala", complete: false},
-  {text: "Usar estados derivados", complete: true},
-];
-
-localStorage.setItem('TODOS-V1', JSON.stringify(defaultTodos));*/
-
-
 //import React from 'react';
 
-function useLocalStorage(itemName, initialValue) {
+/*function useLocalStorage(itemName, initialValue) {
 
   const [item, setItem] = React.useState(initialValue);
 
@@ -65,44 +53,12 @@ function useLocalStorage(itemName, initialValue) {
   };
 
   return {item, saveItem, loading, error};
-}
+}*/
 
 
 function App() {
 
-  const {item: todos, saveItem: saveTodos, loading, error,} = useLocalStorage('TODOS-V1', []);
-  const [searchValue, setSearchValue] = React.useState('');
-
-  const completedTodos= todos.filter(todo => !!todo.complete).length;
-  const totalTodos = todos.length;
-
-  const searchedTodos = todos.filter(
-    (todo)=>{
-      return todo.text.toLowerCase().includes
-      (searchValue.toLocaleLowerCase());
-    }
-  );
-
   
-  
-  const completeTodo= (text)=> {
-    const newTodos= [...todos];
-    const todoIndex= newTodos.findIndex(
-      (todo)=> todo.text === text
-    );
-    newTodos[todoIndex].complete = true;
-    saveTodos(newTodos);
-  }
-
-  const deleteTodo= (text)=> {
-    const newTodos= [...todos];
-    const todoIndex= newTodos.findIndex(
-      (todo)=> todo.text === text
-    );
-    newTodos.splice(todoIndex, 1);
-    saveTodos(newTodos);
-  }
-
   /*return (
     <React.Fragment>
 
@@ -132,17 +88,20 @@ function App() {
   );*/
 
   return(
-    <AppUI 
-    loading={loading}
-    error={error}
-    completedTodos={completedTodos}
-    totalTodos={totalTodos}
-    searchValue={searchValue}
-    setSearchValue={setSearchValue}
-    searchedTodos={searchedTodos}
-    completeTodo={completeTodo}
-    deleteTodo={deleteTodo}
+    <TodoProvider>
+      <AppUI 
+    //loading={loading}
+    //error={error}
+    //completedTodos={completedTodos}
+    //totalTodos={totalTodos}
+    //searchValue={searchValue}
+    //setSearchValue={setSearchValue}
+    //searchedTodos={searchedTodos}
+    //completeTodo={completeTodo}
+    //deleteTodo={deleteTodo}
     />
+    </TodoProvider>
+    
   );
 }
 
