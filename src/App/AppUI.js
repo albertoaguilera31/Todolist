@@ -8,6 +8,8 @@ import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError';
 import { EmtyTodos } from '../EmtyTodos';
 import { TodoContext } from '../TodoContext';
+import { Modal } from '../Modal';
+import { TodoForm } from '../TodoForm';
 
 function AppUI(){
   const {
@@ -16,6 +18,8 @@ function AppUI(){
     searchedTodos,
     completeTodo,
     deleteTodo,
+    openModal,
+    setOpenModal,
   } = React.useContext(TodoContext);
 
 
@@ -43,7 +47,15 @@ function AppUI(){
               </TodoList>
             
 
-          <CreateTodoButton />
+          <CreateTodoButton 
+            setOpenModal={setOpenModal}
+          />
+
+          {openModal && (
+            <Modal>
+              <TodoForm/>
+          </Modal>
+          )}
     
         </React.Fragment>
       );
