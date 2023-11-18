@@ -15,7 +15,7 @@
 }
 
 .Icon-container-Check--active{
-    color: #4caf50;
+    color: #1fee26;
 }
 
 .Icon-container-delete{
@@ -38,5 +38,5 @@
 }
 
 .Icon-container-check:hover .Icon-svg{
-    fill: green;
+    fill: #1fee26;
 }
