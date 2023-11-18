@@ -1,75 +1,18 @@
-# Repositorio base del Curso de Introducción a React.js en Platzi
+Proyecto TodoList en React
 
-¡Hola, Platzinauta!
+Este proyecto TodoList desarrollado en React es una aplicación simple pero efectiva para gestionar tus tareas diarias. Con una interfaz de usuario intuitiva y funcionalidades clave, esta aplicación te permite organizar y realizar un seguimiento de tus actividades cotidianas de manera eficiente.
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
-
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
-
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
-
-## Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Características Principales
+Gestión de Tareas: Agrega, completa y elimina tareas de manera rápida y fácil.
+Búsqueda Dinámica: Encuentra tus tareas con facilidad gracias a la función de búsqueda integrada.
+Persistencia de Datos: Las tareas se almacenan localmente en el navegador, lo que permite que tus listas se conserven incluso después de cerrar la aplicación.
+Personalización: Añade y personaliza tus tareas según tus necesidades y prioridades.
+Tecnologías Utilizadas
+React: Desarrollado utilizando la biblioteca de JavaScript de React para una interfaz de usuario dinámica y eficiente.
+Hooks: Utilización de Hooks de React para gestionar el estado y los efectos en el ciclo de vida del componente.
+LocalStorage: Almacenamiento local para garantizar la persistencia de los datos del usuario.
+Estilos CSS: Diseño limpio y moderno gracias a hojas de estilo en cascada (CSS).
+Instalación y Uso
+Clona este repositorio: git clone https://tu-repositorio.git
+Instala las dependencias: npm install
+Inicia la aplicación: npm start
